@@ -103,7 +103,7 @@
         padding: 25px 25px 25px 25px;
         font-family: 'Roboto';
         border-radius: 10px;
-        /* width: 600px; */
+        width: 737px;
     }
 
     .middle-container {
@@ -168,6 +168,10 @@
    .middle-item-left {
     width: auto;
    }
+
+   .middle-item-3 {
+        width: auto;
+    }
     }
 
 

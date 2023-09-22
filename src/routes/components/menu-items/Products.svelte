@@ -160,12 +160,6 @@
         align-items: center;
     }
 
-    .pos-h2 {
-    font-size: 65px !important;
-    color:  rgb(168, 13, 13);
-    font-family: 'Poppins';
-}
-
 
     .middle-item-3 {
         background-color: #FFF;
@@ -178,6 +172,12 @@
         border-radius: 10px;
         /* width: 600px; */
     }
+
+    .pos-h2 {
+    font-size: 65px !important;
+    color:  green;
+    font-family: 'Poppins';
+}
 
     .middle-container {
         display: flex;
@@ -195,6 +195,7 @@
         flex-direction: column;
         gap: 20px;
         margin-bottom: 35px;
+        width: 200px;
     }
 
 
