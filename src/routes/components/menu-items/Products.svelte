@@ -175,7 +175,7 @@
 
     .pos-h2 {
     font-size: 65px !important;
-    color:  green;
+    color:  rgb(128, 0, 0);
     font-family: 'Poppins';
 }
 
