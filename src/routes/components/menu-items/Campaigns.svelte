@@ -1,9 +1,7 @@
 <script>
     import Campaign from "../images/campaign.png";
-    import { getContext } from "svelte";
     import { scale, slide } from "svelte/transition";
 
-    const active = getContext("active");
 </script>
 
 <main>
@@ -102,12 +100,6 @@
         border-radius: 10px;
         width: 600px;
     }
-
-    .pos-h2 {
-    font-size: 65px !important;
-    color:  green;
-    font-family: 'Poppins';
-}
 
     .middle-container {
         display: flex;

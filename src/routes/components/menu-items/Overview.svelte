@@ -38,7 +38,6 @@
 
     const active = getContext('active');
 
-
 </script>
 
 <main>

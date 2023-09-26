@@ -1,9 +1,15 @@
 <script>
     import Cog from '../images/cog.png';
     import { getContext } from 'svelte';
-    import { scale, slide} from 'svelte/transition';
+    import { scale, slide, blur,} from 'svelte/transition';
+    import Quiz from './example.json';
 
     const active = getContext('active');
+    console.log(Quiz.quiz.maths.q1.answer);
+    const options = Quiz.quiz.maths.q1.options;
+    let answer = Quiz.quiz.maths.q1.answer;
+    let proposedAnswer = '';
+
 
 
 </script>
@@ -25,7 +31,24 @@
         <div class='mid-container'>
             <div class='middle-item-2'>
                 <div class='middle-item-left'>
-                    <h2>Lorem ipsum dolor sit amet</h2>
+                    {Quiz.quiz.maths.q1.question}
+                    {#each options as option}
+                        <button on:click={() =>
+                       {proposedAnswer = option}}
+                         >{option}</button>
+                        
+                     {/each}   
+                     <div  class='conditional'>
+                        {#if proposedAnswer === answer }
+                        <p class='correct-answer' in:blur={{duration: 500}} out:blur={{duration: 200}}>That's correct!</p>
+                        {:else if proposedAnswer === ''}
+                        <p></p>
+                        {:else} 
+                        <p in:blur={{duration: 500}} out:blur={{duration: 200}}>Please try again</p>
+                        {/if}   
+                     </div>
+           
+                    
                 </div>
          
             </div>
@@ -57,6 +80,17 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;800&family=Poppins:ital,wght@0,300;0,400;1,400&family=Roboto:wght@300;400&display=swap');
 
+    .conditional {
+        width: 175px;
+        height: 25px;
+    }
+
+    .correct-answer {
+        color: green;
+        font-weight: 500 !important;
+    }
+
+   
     .middle-container {
         display: flex;
         flex-direction: column;
