@@ -23,6 +23,7 @@
                 ],
                 "answer": "12"
             },
+            
             "q2": {
                 "question": "12 - 8 = ?",
                 "options": [
@@ -32,6 +33,28 @@
                     "4"
                 ],
                 "answer": "4"
+            }, 
+
+            "q3": {
+                "question": "Which one is correct team name in NBA?",
+                "options": [
+                    "New York Bulls",
+                    "Los Angeles Kings",
+                    "Golden State Warriros",
+                    "Huston Rockets"
+                ],
+                "answer": "Huston Rockets"
+            },
+
+            "q4": {
+                "question": "Which one is correct team name in NFL?",
+                "options": [
+                    "San Francisco 49ers",
+                    "Dallas Cowladies",
+                    "Houston Txans",
+                    "Los Angeles Raiders"
+                ],
+                "answer": "San Francisco 49ers"
             }
         }
     }

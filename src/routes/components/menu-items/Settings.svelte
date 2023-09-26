@@ -1,14 +1,41 @@
 <script>
     import Cog from '../images/cog.png';
-    import { getContext } from 'svelte';
     import { scale, slide, blur,} from 'svelte/transition';
     import Quiz from './example.json';
     import Typewriter from 'svelte-typewriter'
 
-    const active = getContext('active');
-    console.log(Quiz.quiz.maths.q1.answer);
-    const options = Quiz.quiz.maths.q1.options;
-    let answer = Quiz.quiz.maths.q1.answer;
+    const mathsQuestionCount = Object.keys(Quiz.quiz.maths).length; // Calculate the number of items inside "maths"
+    const randomNumber = Math.floor(Math.random() * mathsQuestionCount) + 1;
+    var quizPath = null;
+    var answerPath = null;
+    /**
+     * @type {string | null}
+     */
+    var questionPath = null;
+
+    if (randomNumber === 1) {
+        quizPath = Quiz.quiz.maths.q1.options;
+        answerPath = Quiz.quiz.maths.q1.answer;
+        questionPath = Quiz.quiz.maths.q1.question;
+    } else if (randomNumber === 2) {
+        quizPath = Quiz.quiz.maths.q2.options;
+        answerPath = Quiz.quiz.maths.q2.answer;
+        questionPath = Quiz.quiz.maths.q2.question;
+    }
+    else if (randomNumber === 3) {
+        quizPath = Quiz.quiz.maths.q3.options;
+        answerPath = Quiz.quiz.maths.q3.answer;
+        questionPath = Quiz.quiz.maths.q3.question;
+    }
+
+    else {
+        quizPath = Quiz.quiz.maths.q4.options;
+        answerPath = Quiz.quiz.maths.q4.answer;
+        questionPath = Quiz.quiz.maths.q4.question;
+    }
+    
+    const options = quizPath;
+    let answer = answerPath;
     let proposedAnswer = '';
 
 
@@ -32,7 +59,7 @@
         <div class='mid-container'>
             <div class='middle-item-2'>
                 <div class='middle-item-left'>
-                    {Quiz.quiz.maths.q1.question}
+                    {questionPath}
                     {#each options as option}
                         <button on:click={() =>
                        {proposedAnswer = option}}
