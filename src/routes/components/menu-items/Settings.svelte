@@ -3,6 +3,7 @@
     import { getContext } from 'svelte';
     import { scale, slide, blur,} from 'svelte/transition';
     import Quiz from './example.json';
+    import Typewriter from 'svelte-typewriter'
 
     const active = getContext('active');
     console.log(Quiz.quiz.maths.q1.answer);
@@ -55,7 +56,13 @@
 
             <div class='middle-item-2'>
                 <div class='middle-item-left'>
-                    <h2>Lorem ipsum dolor sit amet</h2>
+                    {#if proposedAnswer === answer }
+                    <Typewriter keepCursorOnFinish={true}><h2>You got it!</h2></Typewriter>
+                    {:else if proposedAnswer === ''}
+                    <Typewriter keepCursorOnFinish={true}><h2>Try the quiz to the left</h2></Typewriter>
+                    {:else} 
+                    <Typewriter keepCursorOnFinish={true}><h2>You should probably study some more.</h2></Typewriter>
+                    {/if}   
                 </div>
          
             </div>
